@@ -1,0 +1,16 @@
+# Apache (XAMPP) — lahat ng request ay napupunta sa router.php
+# Ilagay ito sa C:/xampp/htdocs/hr-api/.htaccess
+RewriteEngine On
+RewriteBase /
+
+# Static files: uploads
+RewriteRule ^uploads/ - [L]
+
+# Everything else → router.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ router.php [QSA,L]
+
+# Security: huwag i-expose ang config
+<FilesMatch "^(config\.php|database\.php)$">
+  Require all denied
+</FilesMatch>

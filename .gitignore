@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+frontend/dist/
+
+# Secrets — huwag i-commit
+backend/.env
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Logs / OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
